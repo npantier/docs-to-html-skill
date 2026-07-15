@@ -31,10 +31,15 @@ The skill halts after Phase 1 with a plan for you to confirm. Example:
 
 ## Installation
 
-Clone into your Claude Code skills directory:
+The skill lives at `skills/docs-to-html/` in this repo. Claude Code discovers
+personal skills one level deep — as `~/.claude/skills/<name>/SKILL.md` — so clone
+the repo anywhere and symlink the inner skill directory into place:
 
 ```
-git clone https://github.com/npantier/docs-to-html-skill.git ~/.claude/skills/docs-to-html-skill
+git clone https://github.com/npantier/docs-to-html-skill.git ~/src/docs-to-html-skill
+ln -s ~/src/docs-to-html-skill/skills/docs-to-html ~/.claude/skills/docs-to-html
 ```
 
-The skill lives at `skills/docs-to-html/`.
+That resolves to `~/.claude/skills/docs-to-html/SKILL.md`. Cloning the repo root
+directly into `~/.claude/skills/` won't work — it buries `SKILL.md` too deep for
+discovery.

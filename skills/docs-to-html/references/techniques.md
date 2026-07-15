@@ -49,7 +49,7 @@ Compute per-section tallies and the global distribution **from the rendered rows
 
 ## Cross-cutting behaviors
 
-**Ticket / ID auto-linking.** One JS pass walks text nodes (skipping `A`/`CODE`/`SCRIPT`/`STYLE`) and wraps IDs matching a per-org regex in links to the Jira base URL. Parameterize the base URL and the ID regex.
+**Ticket / ID auto-linking.** One JS pass walks text nodes (skipping `A`/`CODE`/`SCRIPT`/`STYLE`) and wraps IDs matching a per-org regex in links to the ticket base URL. Parameterize the base URL and the ID regex — it's whatever tracker the doc uses (Jira, GitHub Issues, Linear, …), never a hard-coded host.
 
 **Cross-doc links become in-page nav.** A markdown `[x](other.md)` link becomes an in-page view switch (`onclick="__show('crosswalk')"`), not a dead file link.
 
